@@ -9,3 +9,7 @@ This repository contains processing code for semi-laser (sLASER) and HERMES MRS 
 ## Data Organization
 MRS raw data (P-files) and T1w anatomical data must be organized according to BIDS.
 
+## Processing scripts
+Osprey job files for processing are saved in the 'src' directory and named by study. Job files are currently available for the following studies: \
+PDP
+
