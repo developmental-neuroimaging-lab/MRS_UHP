@@ -12,8 +12,9 @@ This repository contains processing code for semi-laser (sLASER) and HERMES MRS 
 See Osprey documentation for additional dependencies.
 
 ** IMPORTANT ** As of May 2024, there is a bug in Osprey generating HTML output, if . To correct bug, add the following to osprey/plot/OspreyHTMLReport.m, lines 1015 and 1257: \
-" isfield(MRSCont.seg,'img') && " \
-e.g., line 1015: if MRSCont.flags.didSeg && isfield(MRSCont.seg,'img') && isfield(MRSCont.seg.img, 'vol_Tha_CoM') % HBCD thalamus overlap
+``` isfield(MRSCont.seg,'img') && ``` \
+e.g., line 1015: \
+``` if MRSCont.flags.didSeg && isfield(MRSCont.seg,'img') && isfield(MRSCont.seg.img, 'vol_Tha_CoM') % HBCD thalamus overlap ```
 
 ## Data Organization
 MRS raw data (P-files, end in .7) and T1w anatomical data must be organized according to BIDS.
