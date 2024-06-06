@@ -27,10 +27,18 @@ PDP
 To run an Osprey job file via Matlab command line:
 ``` MRSCont = RunOspreyJob('path/to/job/file) ```
 
+To run the job via Matlab from the terminal (without the GUI):
+``` 
+cd /Applications/MATLAB_R*.app
+./matlab -nodesktop
+MRSCont = RunOspreyJob('path/to/job/file)
+```
+** Osprey jobs are set up to run in batches. Group data outputs (compiled stat files,etc.) will be overwritten if a new batch is run. Rename the 'output' directory in the job file to write results to a new folder **
+
 ## Study-Specific information
 ### PDP
 The 3y and 4y PDP protocols include 1 MRS acquisition with voxel location in the Anterior Cingulate Cortex (ACC). This is an sLASER sequence (no spectral editing) which provides measures of tNAA, tCr, tCho, Glx and mI (NAA/NAAG and Glu/Gln may be separable, will need to check data quality and reliablity). 
-sLASER acquisition details: TE=30ms, voxel size = 20 x 20 x 15 mm, 96 averages \
+sLASER acquisition details: TE=30ms, TR=2000ms, voxel size = 20 x 20 x 15 mm, 96 averages \
 Edit contents of 'sublist' in PDP_job.m line 205 to include the subjects you wish to process.
 Sessions to be processed are listed in the loop below the subject list setup and currently includes ses-03y and ses-04y. The contents of 'seslist' can be changed to specify or add new sessions. 
 

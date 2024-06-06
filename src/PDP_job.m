@@ -1,4 +1,4 @@
-%% jobSDAT.m
+**%% jobSDAT.m
 %   This function describes an Osprey job defined in a MATLAB script.
 %
 %   A valid Osprey job contains four distinct classes of items:
@@ -202,8 +202,9 @@ data_folder = '/Volumes/BIDS/CL_PDP/';
 % recommended) you can look at the definitions below the loop to see how to
 % set up direct path links to your data.
 % 
-sublist = {'sub-856a'
-           'sub-3258a'
+sublist = {'sub-268a'
+           'sub-3353a'
+           'sub-1594a'
             };
 
 subs       = dir(data_folder);
@@ -234,12 +235,11 @@ for kk = 1:length(subs)
         % MP note: if multiple T1w.nii.gz files are available for a
         % subject, this line will need to be changed to specify which to
         % use based on the file ending
-        files_nii(counter)  = {[sess(ll).folder filesep sess(ll).name filesep 'anat' filesep subs(kk).name '_' sess(ll).name '_T1w.nii']};
+        files_nii(counter)  = {[sess(ll).folder filesep sess(ll).name filesep 'anat' filesep subs(kk).name '_' sess(ll).name '_T1w.nii.gz']};
 
         counter             = counter + 1;
     end
 end
-
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -250,6 +250,6 @@ end
 
 % Specify output folder (you can always use the direct path)
 % (MANDATORY)
-outputFolder = '/Volumes/BIDS/CL_PDP/derivatives/osprey/';
+outputFolder = '/Volumes/BIDS/CL_PDP/derivatives/osprey/updatedrefocusingTE';
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
