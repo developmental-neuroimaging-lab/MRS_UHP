@@ -1,4 +1,4 @@
-**%% jobSDAT.m
+%% jobSDAT.m
 %   This function describes an Osprey job defined in a MATLAB script.
 %
 %   A valid Osprey job contains four distinct classes of items:
