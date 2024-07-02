@@ -25,9 +25,9 @@ The info in the tracking spreadsheet can be used to create a subject list for ru
 ## Processing scripts
 Osprey job files for processing are saved in the 'src' directory and named by study. Job files are currently available for the following studies: \
     PDP \
-    PEACH (separate job files for each voxel: ACC, Thal, PWM) \
+    PEACH (separate job files for each voxel: ACC, Thal, PWM) 
 
-Things to update in the job files: \
+Things to update in the job files: 
 1. List of metabolite inputs (P-files)
 2. List of T1w anatomical inputs (must match order of p-file list)
 3. Output directory (these will be overwritten with each run, so name them with detail)
