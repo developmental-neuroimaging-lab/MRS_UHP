@@ -59,10 +59,10 @@ sLASER acquisition details: TE=30ms, TR=2000ms, voxel size = 20 x 20 x 15 mm, 96
 There are separate job files for each voxel
 
 ### Bioenergetics (BIOE)
-Pilot study protocol includes 3 MRS voxels: midline Anterior Cingulate Cortex (ACC), left Thalamus (Thal), and midline Posterior Cingulate Cortex/Precuneus (PCC)
-short TE sLASER acquisition details ACC and Thal: TE=30ms, TR=2000ms, voxel size = 20 x 20 x 15 mm, 96 averages
-short TE sLASER acquisition details PCC: TE=30ms, TR=2000ms, voxel size = 30 x 30 x30 mm, 96 averages
-long TE sLASER acquisition details PCC (for Lactate): TE=288ms, TR=2100ms, voxel size = 30 x 30 x 30 mm, 96 averages
+Pilot study protocol includes 3 MRS voxels: midline Anterior Cingulate Cortex (ACC), left Thalamus (Thal), and midline Posterior Cingulate Cortex/Precuneus (PCC) \
+short TE sLASER acquisition details ACC and Thal: TE=30ms, TR=2000ms, voxel size = 20 x 20 x 15 mm, 96 averages \
+short TE sLASER acquisition details PCC: TE=30ms, TR=2000ms, voxel size = 30 x 30 x30 mm, 96 averages \
+long TE sLASER acquisition details PCC (for Lactate): TE=288ms, TR=2100ms, voxel size = 30 x 30 x 30 mm, 96 averages \
 
 ## Outputs and Quality Check
 Osprey outputs for each study will be saved to the study BIDS directory under derivatives/osprey. \ 
