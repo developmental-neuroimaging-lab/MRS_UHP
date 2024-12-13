@@ -36,7 +36,7 @@ Things to update in the job files:
 This info can be entered either to loop over data in BIDS format or by listing full paths to P-files and T1w files. I recommend the full paths to avoid errors with missing data, etc. 
 
 To run an Osprey job file via Matlab command line:
-``` MRSCont = RunOspreyJob('path/to/job/file) ```
+``` MRSCont = RunOspreyJob('path/to/job/file') ```
 
 To run the job via Matlab from the terminal (without the GUI):
 ``` 
@@ -57,6 +57,12 @@ Sessions to be processed are listed in the loop below the subject list setup and
 As of spring 2024, the PEACH protocol includes 3 MRS voxels: Anterior Cingulate Cortex (ACC), left Thalamus (Thal), and left Parietal White Matter (PWM) using sLASER. \
 sLASER acquisition details: TE=30ms, TR=2000ms, voxel size = 20 x 20 x 15 mm, 96 averages \
 There are separate job files for each voxel
+
+### Bioenergetics (BIOE)
+Pilot study protocol includes 3 MRS voxels: midline Anterior Cingulate Cortex (ACC), left Thalamus (Thal), and midline Posterior Cingulate Cortex/Precuneus (PCC)
+short TE sLASER acquisition details ACC and Thal: TE=30ms, TR=2000ms, voxel size = 20 x 20 x 15 mm, 96 averages
+short TE sLASER acquisition details PCC: TE=30ms, TR=2000ms, voxel size = 30 x 30 x30 mm, 96 averages
+long TE sLASER acquisition details PCC (for Lactate): TE=288ms, TR=2100ms, voxel size = 30 x 30 x 30 mm, 96 averages
 
 ## Outputs and Quality Check
 Osprey outputs for each study will be saved to the study BIDS directory under derivatives/osprey. \ 
