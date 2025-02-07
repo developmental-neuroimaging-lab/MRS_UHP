@@ -1,0 +1,7 @@
+These scripts work as written, but could be improved by looping over 
+metabolites within a single script, and running segmentation only once and 
+applying segmented images to following runs to avoid re-processing and 
+speed things up
+
+Also, these are currently set to pull T1s in uncompressed .nii format, 
+edit line ~244 for .nii.gz inputs
