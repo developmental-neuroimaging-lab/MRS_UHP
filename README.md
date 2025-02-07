@@ -6,15 +6,22 @@ This repository contains processing code for semi-laser (sLASER) MRS data. Start
 
 ## Software Requirements 
 
-**Matlab** 2017a or newer with GUI Layout Toolbox and Widget Toolbox \
+**Matlab** 2017a or newer with GUI Layout Toolbox, Widget Toolbox, Optimization Toolbox, Signal Processing Toolbox \
 **Osprey:** <https://github.com/schorschinho/osprey> \
 **SPM12:**  <https://www.fil.ion.ucl.ac.uk/spm/docs/installation/> \
+Newer macOS blocks MEX files. To fix, do: \
+```
+cd [path/to/spm12] \
+find . -name "*.mexmaci64" -exec xattr -d com.apple.quarantine {} \;
+```
+
 See Osprey documentation for additional dependencies.
 
-** IMPORTANT ** As of May 2024, there is a bug in Osprey generating HTML output, if . To correct bug, add the following to osprey/plot/OspreyHTMLReport.m, lines 1015 and 1257: \
+** OLD Osprey Bug ** 
+Seems to be resolved Jan. 2025 - (As of May 2024, there is a bug in Osprey generating HTML output, if . To correct bug, add the following to osprey/plot/OspreyHTMLReport.m, lines 1015 and 1257: \
 ``` isfield(MRSCont.seg,'img') && ``` \
 e.g., line 1015: \
-``` if MRSCont.flags.didSeg && isfield(MRSCont.seg,'img') && isfield(MRSCont.seg.img, 'vol_Tha_CoM') % HBCD thalamus overlap ```
+``` if MRSCont.flags.didSeg && isfield(MRSCont.seg,'img') && isfield(MRSCont.seg.img, 'vol_Tha_CoM') % HBCD thalamus overlap ```)
 
 ## Data Organization
 MRS raw data (P-files, end in .7) and T1w anatomical data must be organized according to BIDS. \
@@ -37,6 +44,10 @@ This info can be entered either to loop over data in BIDS format or by listing f
 
 To run an Osprey job file via Matlab command line:
 ``` MRSCont = RunOspreyJob('path/to/job/file') ```
+
+If job fails after some steps completed, individual steps can be run using the commands found here: <https://schorschinho.github.io/osprey/osprey-command-line-tutorial.html> \
+First run ```MRSCont = OspreyJob('Path/To/Job/File');``` to load existing data (do not overwrite), then pick up with next steps. 
+
 
 To run the job via Matlab from the terminal (without the GUI):
 ``` 
@@ -62,7 +73,7 @@ There are separate job files for each voxel
 Pilot study protocol includes 3 MRS voxels: midline Anterior Cingulate Cortex (ACC), left Thalamus (Thal), and midline Posterior Cingulate Cortex/Precuneus (PCC) \
 short TE sLASER acquisition details ACC and Thal: TE=30ms, TR=2000ms, voxel size = 20 x 20 x 15 mm, 96 averages \
 short TE sLASER acquisition details PCC: TE=30ms, TR=2000ms, voxel size = 30 x 30 x30 mm, 96 averages \
-long TE sLASER acquisition details PCC (for Lactate): TE=288ms, TR=2100ms, voxel size = 30 x 30 x 30 mm, 96 averages \
+long TE sLASER acquisition details PCC (for Lactate): TE=144ms, TR=2100ms, voxel size = 30 x 30 x 30 mm, 96 averages \
 
 ## Outputs and Quality Check
 Osprey outputs for each study will be saved to the study BIDS directory under derivatives/osprey. \ 
