@@ -9,9 +9,9 @@ This repository contains processing code for semi-laser (sLASER) MRS data. Start
 **Matlab** 2017a or newer with GUI Layout Toolbox, Widget Toolbox, Optimization Toolbox, Signal Processing Toolbox \
 **Osprey:** <https://github.com/schorschinho/osprey> \
 **SPM12:** clone or download zip from [<https://www.fil.ion.ucl.ac.uk/spm/docs/installation/>](https://github.com/spm/spm12), SPM25 NOT compatible! (as of Oct. 2025) \
-Newer macOS blocks MEX files. To fix, do: \
+Newer macOS blocks MEX files. To fix, do: 
 ```
-cd [path/to/spm12] \
+cd [path/to/spm12] 
 find . -name "*.mexmaci64" -exec xattr -d com.apple.quarantine {} \;
 ```
 
