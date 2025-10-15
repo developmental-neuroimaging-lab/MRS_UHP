@@ -8,7 +8,7 @@ This repository contains processing code for semi-laser (sLASER) MRS data. Start
 
 **Matlab** 2017a or newer with GUI Layout Toolbox, Widget Toolbox, Optimization Toolbox, Signal Processing Toolbox \
 **Osprey:** <https://github.com/schorschinho/osprey> \
-**SPM12:**  <https://www.fil.ion.ucl.ac.uk/spm/docs/installation/> \
+**SPM12:** clone or download zip from [<https://www.fil.ion.ucl.ac.uk/spm/docs/installation/>](https://github.com/spm/spm12), SPM25 NOT compatible! (as of Oct. 2025) \
 Newer macOS blocks MEX files. To fix, do: \
 ```
 cd [path/to/spm12] \
@@ -32,7 +32,7 @@ The info in the tracking spreadsheet can be used to create a subject list for ru
 ## Processing scripts
 Osprey job files for processing are saved in the 'src' directory and named by study. Job files are currently available for the following studies: \
     PDP \
-    PEACH (separate job files for each voxel: ACC, Thal, PWM) 
+    PEACH (separate job files for each voxel: ACC, Thal, PWM) \
 
 Things to update in the job files: 
 1. List of metabolite inputs (P-files)
@@ -42,7 +42,7 @@ Things to update in the job files:
 
 This info can be entered either to loop over data in BIDS format or by listing full paths to P-files and T1w files. I recommend the full paths to avoid errors with missing data, etc. 
 
-To run an Osprey job file via Matlab command line:
+To run an Osprey job file via Matlab command line: \
 ``` MRSCont = RunOspreyJob('path/to/job/file') ```
 
 If job fails after some steps completed, individual steps can be run using the commands found here: <https://schorschinho.github.io/osprey/osprey-command-line-tutorial.html> \
